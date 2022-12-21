@@ -26,6 +26,20 @@ const AddItem = ({navigation, route}): JSX.Element => {
   const inputRef = useRef();
   const { appColors } = useContext(ThemeContext);
 
+  const styles = EStyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    inputContainer: {
+      marginHorizontal: '.7rem',
+      marginVertical: '.4rem',
+    },
+    flex: {
+      flex: 1,
+    },
+  });
+
   useEffect(() => {
     setTimeout(() => {
       inputRef?.current?.focus();
@@ -36,10 +50,6 @@ const AddItem = ({navigation, route}): JSX.Element => {
       setIsEdit(true);
     }
   }, []);
-
-  const handleBackPress = (): void => {
-    navigation.goBack();
-  };
 
   const handleButtonPress = (): void => {
     if (isEmpty(title?.trim())) {
@@ -96,9 +106,9 @@ const AddItem = ({navigation, route}): JSX.Element => {
             style={{width: '100%'}}
             theme={{
               colors: {
-                text: "red",
-                primary: "red",
-                background: "red",
+                text: appColors.appBackground,
+                primary: appColors.focus,
+                background: appColors.text,
               },
             }}
             render={innerProps => (
@@ -126,9 +136,9 @@ const AddItem = ({navigation, route}): JSX.Element => {
             numberOfLines={4}
             theme={{
               colors: {
-                text: "red",
-                primary: "red",
-                background: "red",
+                text: appColors.appBackground,
+                primary: appColors.focus,
+                background: appColors.text,
               },
             }}
             value={description}
@@ -148,18 +158,6 @@ const AddItem = ({navigation, route}): JSX.Element => {
   );
 };
 
-const styles = EStyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "red",
-  },
-  inputContainer: {
-    marginHorizontal: '.7rem',
-    marginVertical: '.4rem',
-  },
-  flex: {
-    flex: 1,
-  },
-});
+
 
 export default AddItem;

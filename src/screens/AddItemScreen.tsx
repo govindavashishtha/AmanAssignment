@@ -15,7 +15,7 @@ import {useDispatch} from 'react-redux';
 import {addItem, editItem} from '../redux/itemSlice';
 import {isEmpty} from 'lodash';
 import SnackbarUtil, {EDuration} from '../utils/SnackBar';
-import { ThemeContext } from "../../App";
+import app, { ThemeContext } from "../../App";
 
 const AddItem = ({navigation, route}): JSX.Element => {
   const item = route?.params?.item;
@@ -29,7 +29,7 @@ const AddItem = ({navigation, route}): JSX.Element => {
   const styles = EStyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'white',
+      backgroundColor: appColors.screenBackground,
     },
     inputContainer: {
       marginHorizontal: '.7rem',
@@ -106,9 +106,9 @@ const AddItem = ({navigation, route}): JSX.Element => {
             style={{width: '100%'}}
             theme={{
               colors: {
-                text: appColors.appBackground,
-                primary: appColors.focus,
-                background: appColors.text,
+                text: appColors.text,
+                primary: appColors.primary,
+                background: appColors.screenBackground,
               },
             }}
             render={innerProps => (
@@ -136,9 +136,9 @@ const AddItem = ({navigation, route}): JSX.Element => {
             numberOfLines={4}
             theme={{
               colors: {
-                text: appColors.appBackground,
-                primary: appColors.focus,
-                background: appColors.text,
+                text: appColors.text,
+                primary: appColors.primary,
+                background: appColors.screenBackground,
               },
             }}
             value={description}

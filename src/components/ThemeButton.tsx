@@ -9,7 +9,7 @@ const ThemeButton = ({title, onPress, textUpperCase}: IButton): JSX.Element => {
 
   const styles = EStyleSheet.create({
     container: {
-      backgroundColor: appColors.appBackground,
+      backgroundColor: appColors.primary,
       padding:'1rem',
       margin:  '1rem',
       borderRadius: 5,
@@ -19,7 +19,7 @@ const ThemeButton = ({title, onPress, textUpperCase}: IButton): JSX.Element => {
       height: '3.5rem',
     },
     button: {
-      color: appColors.text,
+      color: "white",
       fontSize: '1.12rem',
       alignItems: 'center',
       fontWeight: 'bold',

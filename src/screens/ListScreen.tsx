@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from "react";
 import {View, FlatList, TouchableOpacity, Button} from 'react-native';
 import AddButton from '../components/AddButton';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {deleteItem} from '../redux/itemSlice';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import ConfirmDialog from '../components/ConfirmBox';
+import { ThemeContext } from "../../App";
 
 export interface IListItem {
   id: string;
@@ -16,6 +17,7 @@ export interface IListItem {
 
 const ListScreen = ({navigation, route}): JSX.Element => {
   const itemsList = useSelector(state => state.item);
+  const { appColors } = useContext(ThemeContext);
   const handlePress = (): void => {
     navigation.navigate('AddItem');
   };
@@ -47,7 +49,7 @@ const ListScreen = ({navigation, route}): JSX.Element => {
     const renderRightActions = (progress, dragX, onClick): JSX.Element => {
       return (
         <View style={styles.deleteButton}>
-          <Button color="red" onPress={onClick} title="DELETE" />
+          <Button color="red" onPress={onClick} title="Delete" />
         </View>
       );
     };
@@ -73,7 +75,10 @@ const ListScreen = ({navigation, route}): JSX.Element => {
 
   return (
     <>
-      <View style={styles.listContainer}>
+      <View style={{
+        flex: 1,
+        backgroundColor: appColors.screenBackground
+      }}>
         <FlatList
           data={itemsList}
           renderItem={item =>
@@ -96,9 +101,6 @@ const ListScreen = ({navigation, route}): JSX.Element => {
 };
 
 const styles = EStyleSheet.create({
-  listContainer: {
-    flex: 1,
-  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',

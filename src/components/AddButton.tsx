@@ -16,7 +16,7 @@ const AddButton = ({title, onPress, textUpperCase}: IButton): JSX.Element => {
 
   const styles = EStyleSheet.create({
     container: {
-      backgroundColor: appColors.appBackground,
+      backgroundColor: appColors.primary,
       paddingHorizontal: '1rem',
       borderRadius: 5,
       overflow: 'hidden',
@@ -29,7 +29,7 @@ const AddButton = ({title, onPress, textUpperCase}: IButton): JSX.Element => {
       alignItems: 'center',
     },
     button: {
-      color: appColors.text,
+      color: "white",
       fontSize: '1rem',
       alignSelf: 'center',
       marginLeft: '.35rem',

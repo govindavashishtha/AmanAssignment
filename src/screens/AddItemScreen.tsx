@@ -15,7 +15,7 @@ import {useDispatch} from 'react-redux';
 import {addItem, editItem} from '../redux/itemSlice';
 import {isEmpty} from 'lodash';
 import SnackbarUtil, {EDuration} from '../utils/SnackBar';
-import app, { ThemeContext } from "../../App";
+import  { ThemeContext } from "../../App";
 
 const AddItem = ({navigation, route}): JSX.Element => {
   const item = route?.params?.item;

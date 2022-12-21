@@ -18,11 +18,11 @@ const darkPalette: IColors = {
 
 const lightPalette: IColors = {
   text: '#000000',
-  appBackground: '#d1d1d1',
+  appBackground: '#e3e3e3',
   focus: '#ffffff',
   primary: '#ff6f00',
   secondary: '#a2d5c6',
-  screenBackground: '#ffffff',
+  screenBackground: '#ededed',
 };
 
 export const getAppColors = (isDarkTheme: boolean): IColors => {

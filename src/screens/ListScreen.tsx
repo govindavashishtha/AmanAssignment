@@ -8,6 +8,7 @@ import {deleteItem} from '../redux/itemSlice';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import ConfirmDialog from '../components/ConfirmBox';
 import { ThemeContext } from "../../App";
+import EmptyScreen from "./EmptyScreen";
 
 export interface IListItem {
   id: string;
@@ -39,7 +40,7 @@ const ListScreen = ({navigation, route}): JSX.Element => {
   };
 
   const renderItem = ({item, index}, onClick): JSX.Element => {
-    const closeRow = (index): void => {
+    const closeRow = (index: number): void => {
       if (prevOpenedRow && prevOpenedRow !== row[index]) {
         prevOpenedRow.close();
       }
@@ -87,6 +88,7 @@ const ListScreen = ({navigation, route}): JSX.Element => {
             })
           }
           keyExtractor={item => item?.id}
+          ListEmptyComponent={<EmptyScreen />}
         />
       </View>
       <AddButton

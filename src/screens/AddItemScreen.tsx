@@ -106,7 +106,7 @@ const AddItem = ({navigation, route}): JSX.Element => {
             style={{width: '100%'}}
             theme={{
               colors: {
-                text: appColors.text,
+                text: 'white',
                 primary: appColors.primary,
                 background: appColors.screenBackground,
               },
@@ -136,7 +136,7 @@ const AddItem = ({navigation, route}): JSX.Element => {
             numberOfLines={4}
             theme={{
               colors: {
-                text: appColors.text,
+                text: 'white',
                 primary: appColors.primary,
                 background: appColors.screenBackground,
               },

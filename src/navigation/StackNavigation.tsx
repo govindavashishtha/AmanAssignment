@@ -3,6 +3,7 @@ import ListScreen from '../screens/ListScreen';
 import AddItemScreen from '../screens/AddItemScreen';
 import { useContext } from 'react';
 import { ThemeContext } from '../../App';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Stack = createStackNavigator();
 
@@ -31,7 +32,10 @@ const MyStack = (): JSX.Element => {
       <Stack.Screen name="AddItem" component={AddItem} options={{title: 'Add New Items',
           headerTitleStyle: {
             color: appColors.text
-          },}} />
+          },
+          headerBackTitleStyle: {
+            color: appColors.text
+          }}} />
     </Stack.Navigator>
   );
 };

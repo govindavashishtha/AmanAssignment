@@ -27,10 +27,10 @@ const App = () => {
     <Provider store={store}>
       <ThemeContext.Provider value={{appColors}}>
         <SafeAreaView
-          style={{flex: 1, backgroundColor: appColors.appBackground}}>
+          style={{flex: 1, backgroundColor: "red"}}>
           <StatusBar
             barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-            backgroundColor={appColors.appBackground}
+            backgroundColor={"red"}
           />
           <NavigationContainer>
             <StackNavigation />

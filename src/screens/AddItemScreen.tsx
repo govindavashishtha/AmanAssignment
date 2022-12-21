@@ -47,8 +47,8 @@ const AddItem = ({navigation, route}): JSX.Element => {
         "Title can't be empty",
         EDuration.Short,
         'Hide',
-        Colors.white,
-        Colors.themeButton,
+        "red",
+        "red",
       );
       return;
     } else if (isEmpty(description?.trim())) {
@@ -56,8 +56,8 @@ const AddItem = ({navigation, route}): JSX.Element => {
         "Description can't be empty",
         EDuration.Short,
         'Hide',
-        Colors.white,
-        Colors.themeButton,
+        "red",
+        "red",
       );
       return;
     }
@@ -96,9 +96,9 @@ const AddItem = ({navigation, route}): JSX.Element => {
             style={{width: '100%'}}
             theme={{
               colors: {
-                text: Colors.black,
-                primary: Colors.primaryColorDark,
-                background: Colors.white,
+                text: "red",
+                primary: "red",
+                background: "red",
               },
             }}
             render={innerProps => (
@@ -126,9 +126,9 @@ const AddItem = ({navigation, route}): JSX.Element => {
             numberOfLines={4}
             theme={{
               colors: {
-                text: Colors.black,
-                primary: Colors.primaryColorDark,
-                background: Colors.white,
+                text: "red",
+                primary: "red",
+                background: "red",
               },
             }}
             value={description}
@@ -151,7 +151,7 @@ const AddItem = ({navigation, route}): JSX.Element => {
 const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
+    backgroundColor: "red",
   },
   inputContainer: {
     marginHorizontal: '.7rem',
